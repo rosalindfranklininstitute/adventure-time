@@ -4,13 +4,15 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "adventuretime"
-dynamic = "version"
+dynamic = ["version"]
 dependencies = [ "adventurelib" ]
 requires-python = ">=3.12"
 authors = [ {name = "Laura Shemilt", email = "lashemilt@gmail.com"}]
 description = "Text based escape room"
-readme  = {file = "README.md"}
+readme  = {file="README.md", content-type="markdown"}
 
 [project.scripts]
-adventuretime-cli = "src:main"
+adventure-time = "main:lock_the_room"
 
+[project.entry-points.'rooms']
+EntrancePuzzle = 'rooms.entrance:EntrancePuzzle'

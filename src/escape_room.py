@@ -1,6 +1,8 @@
 from abc import ABC, abstractmethod
 
-class Room(ABC):
+
+class EscapeRoom(ABC):
+
     @abstractmethod
-    def exit_room(self):
+    def play_puzzle(self):
         raise NotImplementedError
