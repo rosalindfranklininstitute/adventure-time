@@ -9,7 +9,6 @@ class EscapeRoom(ABC):
 
     def escape_room(self,direction,
                     escape_message="Congratulations you have escaped the room"):
-            self.direction = direction
             say(escape_message)
             say(f"Go {self.direction} for next room")
 
