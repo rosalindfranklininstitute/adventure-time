@@ -2,16 +2,6 @@ from escape_room import EscapeRoom
 from adventurelib import Room, Item, say, Bag
 from lock import Lock
 
-class Keypad(Lock):
-    def unlock(self, answer):
-        if str(answer) == "2317":
-            say("The door unlocks")
-        elif str(answer) == "1117":
-            say( "The keypad flashes an error: CODE INCORRECT, but this was a close guess, what would the time be rendered in 24hr?")
-        else:
-            say("The keypad flashes an error: CODE INCORRECT")
-
-
 
 class EntrancePuzzle(EscapeRoom):
 
@@ -33,13 +23,17 @@ class EntrancePuzzle(EscapeRoom):
 
         self.items = Bag({self.keypad, self.clock, self.papers})
 
+        self.locked = self.keypad.locked
 
 
     def play_room(self):
         # this is where you script your game, essentially your main method. It is used in the code like the statement
         # if __name__=='__main__'
 
-        say(self.room)
-        while self.keypad.locked is False:
-            self.locked = False
 
+
+        say(self.room)
+
+            # say("You tentitatively push the door, it creaks open.\
+            #      To the north lies the next room.")
+            # self.direction = 'north'
