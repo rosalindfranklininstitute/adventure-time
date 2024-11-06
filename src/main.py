@@ -14,6 +14,7 @@ def examine(item):
         say(f'There is no {item} in this room')
 
 
+
 def lock_the_room():
     discovered_rooms = [ e.load() for e in entry_points(group="rooms")]
 
