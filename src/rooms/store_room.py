@@ -6,6 +6,7 @@ class StoreRoom(EscapeRoom):
 
     def __init__(self):
 
+
         self.room = Room("""You enter a dingy storeroom...""")
 
     def escape(self):

@@ -4,13 +4,11 @@ from adventurelib import say
 class EscapeRoom(ABC):
     name: str
     locked: bool
-    direction: str
+    escape_direction: str
+
+    locked=True
 
 
-    def escape_room(self,direction,
-                    escape_message="Congratulations you have escaped the room"):
-            say(escape_message)
-            say(f"Go {self.direction} for next room")
 
     @abstractmethod
     def escape(self):
@@ -18,7 +16,5 @@ class EscapeRoom(ABC):
     @abstractmethod
     def test_lock(self):
          pass
-    @abstractmethod
-    def play_room(self):
-        pass
+
 
