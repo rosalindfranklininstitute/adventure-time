@@ -19,8 +19,8 @@ def examine(item):
         item (str): the name of the item.
     """
 
-    if item in current_room.items:
-        current_item = current_room.items.find(item)
+    if item in current_puzzle.items:
+        current_item = current_puzzle.items.find(item)
         say(current_item)
     else:
         say(f'There is no {item} in this room')
@@ -41,9 +41,9 @@ def enter(key):
     else:
         obj=current_lock.take_random()
         obj.unlock(key)
-        current_room.test_lock()
-        if not current_room.locked:
-            current_room.escape()
+        current_puzzle.test_lock()
+        if not current_puzzle.locked:
+            current_puzzle.escape()
 
 @when('try LOCK')
 def try_lock(lock):
@@ -55,8 +55,8 @@ def try_lock(lock):
         lock (str): name of lock
     """
     current_lock.clear()
-    if lock in current_room.items:
-        obj = current_room.items.find(lock)
+    if lock in current_puzzle.items:
+        obj = current_puzzle.items.find(lock)
         if type(obj) is Lock:
             current_lock.add(obj)
             say(f"Enter the key to unlock {lock}")
@@ -78,13 +78,13 @@ def go(direction):
     Args:
         direction (str): the direction to move in
     """
-    global current_room
-    room = current_room.room.exit(direction)
+    global current_puzzle
+    room = current_puzzle.room.exit(direction)
     if room:
-        if current_room.locked:
+        if current_puzzle.locked:
             say(f"You cannot go {direction}. The room is locked")
         else:
-            current_room = room
+            current_puzzle = room
             say("You go %s." % direction)
             say(room.room)
     else:
@@ -96,7 +96,7 @@ def is_open():
     Type 'is it open' into game prompt to find out if a room is open.
     Returns state of the room.
     """
-    if current_room.locked:
+    if current_puzzle.locked:
         say("The room is locked, continue to solve puzzles to unlock the room")
     else:
         say( "The room is open")
@@ -106,7 +106,7 @@ def whereami():
     """
     Enter 'where am i' into the game prompt to find the description of the you are in
     """
-    say(current_room.room)
+    say(current_puzzle.room)
 
 
 ############################## Game Loop ##########################################
@@ -138,7 +138,7 @@ def lock_the_room():
     microscope_hall.room.west = Room("""Congratulations you have escaped from the Lab!""")
 
     #############  Set start room and start game ####################
-    global current_room
-    current_room = entrance
-    say(current_room.room)
+    global current_puzzle
+    current_puzzle = entrance
+    say(current_puzzle.room)
     start()

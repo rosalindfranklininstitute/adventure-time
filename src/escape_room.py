@@ -6,15 +6,11 @@ class EscapeRoom(ABC):
     locked: bool
     escape_direction: str
 
-    locked=True
-
-
-
     @abstractmethod
     def escape(self):
          pass
     @abstractmethod
-    def test_lock(self):
+    def room_completed(self):
          pass
 
 

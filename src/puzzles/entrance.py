@@ -23,6 +23,7 @@ class Entrance(EscapeRoom):
 
         self.keypad = Lock(  "2317","The keypad requires a 4 digit code","keypad")
 
+        #Add all your items to an iventory
         self.items = Bag({self.keypad, self.clock, self.papers, self.desk})
 
         self.locked = self.test_lock()
