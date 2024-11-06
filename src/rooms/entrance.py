@@ -23,17 +23,23 @@ class EntrancePuzzle(EscapeRoom):
 
         self.items = Bag({self.keypad, self.clock, self.papers})
 
-        self.locked = self.keypad.locked
+        self.locked = self.test_lock()
 
+        self.direction=None
+
+    def test_lock(self):
+        if self.keypad.locked:
+            self.locked=True
+        else:
+            self.locked=False
 
     def play_room(self):
         # this is where you script your game, essentially your main method. It is used in the code like the statement
         # if __name__=='__main__'
 
-
-
         say(self.room)
 
-            # say("You tentitatively push the door, it creaks open.\
-            #      To the north lies the next room.")
-            # self.direction = 'north'
+    def escape(self):
+
+        self.escape_room("north",
+                         "You push the door, it yields and slowly creeps open.")

@@ -23,6 +23,9 @@ def enter(key):
     else:
         obj=current_lock.take_random()
         obj.unlock(key)
+        current_room.test_lock()
+        if not current_room.locked:
+            current_room.escape()
 
 @when('try LOCK')
 def try_lock(lock):
@@ -38,20 +41,15 @@ def try_lock(lock):
         say(f"There is no {lock} in this room")
 
 
+
 def lock_the_room():
     discovered_rooms = [ e.load() for e in entry_points(group="rooms")]
-
-
-
 
     for room in discovered_rooms:
         global current_room
         current_room = room()
         current_room.play_room()
         # ctr-c to  break)
-
-
-
 
 
     start()
