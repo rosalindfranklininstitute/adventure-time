@@ -14,5 +14,3 @@ readme  = {file="README.md", content-type="markdown"}
 [project.scripts]
 adventure-time = "main:lock_the_room"
 
-[project.entry-points.'rooms']
-EntrancePuzzle = 'rooms.entrance:EntrancePuzzle'
