@@ -126,10 +126,18 @@ Locks are a special type of item. They have all the same properties of Items and
 The first thing you need to do is define your lock in the same way that you define your item giving the extra answer field.
 e.g.
 ```
-self.padlock = Lock("9999",
-                            "The padlock has a 4 number combination to unlock",
-                            "padlock")
+self.padlock = Lock("9999", "The padlock has a 4 number combination to unlock","padlock")
 
 ```
+The above lock needs an answer of 9999 to be opened. You can change the answer to anything you want as long as it is a string. It can be a word, a set of numbers or a group of words. If you want to use another item in the room to unlock the lock you would give the answer as the name of that item. e.g.
+```
+self.old_key = Item('An large old key hangs on a nail' , 'old key')
+self.padlock = Lock("old key", "A rusty padlock holds together a thick chain wrapped tightly around the gates. It needs a large key to open it", "padlock")
+```
 
+If a player examines a lock (using the `examine` command) then they will be returned a description. To unlock the lock a player would need to first try the lock using:
+```
+try padlock
+A rusty padlock holds together a thick chain wrapped tightly around the gates. It needs a large key to open it
 
+```
