@@ -41,7 +41,7 @@ def enter(key):
     else:
         obj=current_lock.take_random()
         obj.unlock(key)
-        current_puzzle.test_lock()
+        current_puzzle.room_completed()
         if not current_puzzle.locked:
             current_puzzle.escape()
 

@@ -6,7 +6,11 @@ class StoreRoom(EscapeRoom):
 
     def __init__(self):
 
+        self.name = "storeroom"
+
         self.room = Room("""Enter the description of your room here""")
+
+        self.escape_direction = "north" # escape direction of the room. Do not delete of change this property
 
         ##### add some items to give clues of the puzzles ###########
         # self.pen = Item("description of item", "item name")

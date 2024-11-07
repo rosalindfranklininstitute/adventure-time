@@ -5,8 +5,11 @@ from adventurelib import Room, Item, Bag
 class Staircase(EscapeRoom):
 
     def __init__(self):
+        self.name = "staircase"
 
         self.room = Room("""Enter the description of your room here""")
+
+        self.escape_direction = "east" # escape direction of the room. Do not delete of change this property
 
         ##### add some items to give clues of the puzzles ###########
         # self.pen = Item("description of item", "item name")
@@ -27,6 +30,8 @@ class Staircase(EscapeRoom):
 
         ##### add all you items and locks to an inventory ###########
         self.items = Bag({self.padlock})
+
+
 
     # Unlock the room by setting this test lock method. Once all the locks are open
     # the puzzle can be unlocked. You can implement this method how you like. Delete pass
