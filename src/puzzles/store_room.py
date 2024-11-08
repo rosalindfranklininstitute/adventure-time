@@ -8,29 +8,106 @@ class StoreRoom(EscapeRoom):
 
         self.name = "storeroom"
 
-        self.room = Room("""Enter the description of your room here""")
+        self.room = Room(
+                """
+                You walk into a dimly lit storeroom. The dust that fills your lungs tells that this room hasn't been opened in many years.
+                You pull a crusty string beside you and a flickering light reveals a small, crowded room filled with cupboards and boxes.
+                The items inside the boxes range from old monitors to unlabelled jars with gooey substances, some glowing and other not.
+                 Suddenly a loud squawk draws your attention to a dark corner of the room where two beady eyes glare back at you whilst it pats its feet rhythmically.
+                
+                
+                ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠿⠿⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+                ⣿⣿⣿⣿⣿⣿⣿⡿⠟⠋⢉⡉⠙⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠛⠋⣉⣥⣤⣤⣶⣶⣶⣦⣤⣤⣉⡉⠛⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⠉⣉⠙⠛⠿⣿⣿⣿⣿⣿⣿⣿⣿
+                ⣿⣿⣿⣿⡿⠛⢁⣠⣶⣿⣿⣿⣿⣶⣤⡈⠛⢿⣿⣿⠿⠋⣁⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣶⣄⡉⠻⢿⣿⣿⠟⠉⣠⣴⣾⣿⣿⣿⣷⣦⣄⠙⠻⣿⣿⣿⣿⣿
+                ⣿⣿⡿⠉⣠⡾⠟⠋⣉⣁⣀⣈⠙⠻⣿⣿⣷⣄⠉⢁⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⡀⠉⢀⣴⣿⣿⠿⠟⢉⣀⣀⣉⡉⠛⠷⣦⡈⠻⣿⣿⣿
+                ⣿⣿⠀⠈⢁⣤⣾⣿⣿⣿⣿⣿⣿⣦⣄⠙⠿⠃⣰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⡀⠻⠟⢁⣴⣾⣿⣿⣿⣿⣿⣷⣦⣄⠙⠀⢸⣿⣿
+                ⣿⣿⣷⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡷⠀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡄⠲⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣾⣿⣿⣿
+                ⣿⣿⣿⣿⣿⡿⠿⠿⠿⠿⠿⣿⣿⣿⣿⠁⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡀⢹⣿⣿⣿⡿⠿⠿⠿⠿⠿⣿⣿⣿⣿⣿⣿
+                ⣿⣿⣿⡟⠁⣠⣶⣶⣶⣶⣶⣦⣤⣈⡁⢰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠈⣉⣠⣤⣶⣶⣶⣶⣶⣦⣀⠙⣿⣿⣿⣿
+                ⣿⣿⠋⣠⣾⡿⠟⠛⠛⠛⠿⠿⠿⣿⡇⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⣿⡿⠿⠿⠟⠛⠛⠛⢿⣿⣦⠀⢻⣿⣿
+                ⡿⠃⣴⡿⠋⣠⣶⣿⣿⣿⣿⣶⣤⣤⡀⢸⣿⣿⣿⣿⣿⣿⣿⠿⠛⢋⣁⣠⣤⣤⣤⣤⣤⣤⣄⣉⡛⠛⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⣠⣤⣶⣾⣿⣿⣿⣷⣤⡈⠻⣷⡀⢹⣿
+                ⠃⣸⠋⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠸⣿⣿⣿⣿⡿⠋⢁⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣦⣈⠙⠻⣿⣿⣿⣿⣿⡟⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⠈⢷⡀⢿
+                ⠀⠁⣰⣿⣿⣿⣿⣿⣿⣿⠿⠟⠛⠛⠓⠀⢿⣿⣿⠏⢠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⠈⢻⣿⣿⣿⠃⠘⠛⠛⠛⠿⢿⣿⣿⣿⣿⣿⣿⣷⡈⠃⢸
+                ⣿⣿⣿⣿⣿⣿⡿⠋⣀⣤⣶⣶⣾⣿⣿⣧⠈⢿⠃⣰⣿⣿⠟⢁⣀⠀⠀⠉⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡀⠻⣿⠏⣠⣿⣿⣿⣶⣶⣦⣄⡈⢻⣿⣿⣿⣿⣿⣿⣿
+                ⣿⣿⣿⣿⣿⡿⠁⣼⣿⡿⠿⠛⠛⢛⣛⣛⡃⠀⣰⣿⣿⡇⢰⣿⠁⠀⢼⣿⡆⠹⣿⣿⣿⣿⡟⢉⣀⡀⠀⢄⠉⢻⣿⣿⡀⠉⢀⣛⣛⣛⠛⠛⠻⠿⣿⣷⡀⢹⣿⣿⣿⣿⣿⣿
+                ⣿⣿⣿⣿⣿⠃⣸⣿⠋⣠⣶⣿⣿⣿⣿⣿⡏⢀⣿⣿⣿⡇⠹⣿⣄⠀⠀⠀⠀⢰⣿⣿⣿⣿⠀⠘⠯⠃⠀⢸⣷⠀⣿⣿⣧⠈⢿⣿⣿⣿⣿⣿⣷⣦⠈⢿⣷⡀⢿⣿⣿⣿⣿⣿
+                ⣿⣿⣿⣿⡟⢠⡿⠁⣰⣿⣿⣿⣿⣿⣿⠟⠁⠸⣿⣿⣿⣷⣄⠙⠛⠿⠒⠉⣠⣿⣿⣿⣿⣿⠀⢄⡀⢀⣠⣾⡿⠀⣿⣿⣿⠀⡄⠙⢿⣿⣿⣿⣿⣿⣷⡀⢻⣇⠈⣿⣿⣿⣿⣿
+                ⣿⣿⣿⣿⠁⢸⠃⣸⣿⣿⣿⣿⣿⣿⠃⣠⣧⠀⢿⣿⣿⣿⣿⣿⣶⣶⣶⡿⢻⣦⣾⣿⣉⣹⣷⣄⠙⠛⠛⠋⣠⣾⣿⣿⣿⠀⣿⣦⠈⢻⣿⣿⣿⣿⣿⣷⠀⢻⠀⣿⣿⣿⣿⣿
+                ⣿⣿⣿⣿⣄⠈⢠⣿⣿⣿⣿⣿⣿⠃⣰⣿⡿⠃⡈⠻⣿⣿⣿⣿⣿⣟⣋⠀⡈⠛⠿⠿⠿⠗⠸⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠀⢻⣿⣷⠀⢻⣿⣿⣿⣿⣿⣧⡈⢀⣿⣿⣿⣿⣿
+                ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⢰⣿⣿⠃⣰⣷⣦⡈⠛⠿⣿⣿⣿⣿⣦⣁⣴⣶⣶⡀⢂⣤⣤⣿⣿⣿⣿⣿⣿⣿⠏⢀⣶⡀⢿⣿⣧⠈⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+                ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⣿⣿⠏⢰⣿⣿⣿⣿⣷⣦⣄⣉⡙⠛⠻⠿⠿⢿⣿⣿⣿⣿⣿⣿⣿⠿⠿⠛⠋⣀⣴⣿⣿⣧⠈⣿⣿⡆⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+                ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡀⢻⣿⣇⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣶⣶⣤⣤⣤⣤⣤⣤⣤⣤⣤⣶⣶⣿⣿⣿⣿⣿⡟⢀⣿⣿⠃⣰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+                ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡀⠹⣿⡄⠸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠁⣾⡿⠁⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+                ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣆⠘⢿⣄⠘⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⢀⡾⠏⢠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+                ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣄⡙⠣⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡃⠰⠋⣠⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+                ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+                """
+        )
 
         self.escape_direction = "north" # escape direction of the room. Do not delete of change this property
 
         ##### add some items to give clues of the puzzles ###########
-        # self.pen = Item("description of item", "item name")
-        # self.book = Item("description of item", "item name")
+        self.raven = Item(
+                r"You listen carefully to the raven's pat.\npat pat ...... pat pat pat pat pat ...... pat pat pat pat pat pat...\npat pat ...... pat pat pat pat pat ...... pat pat pat pat pat pat... It's eyes now glare INTENSELY between two objects, the door to the exit and a cupboard in the corner of the room.",
+                "raven"
+                )
+        self.tome = Item(
+                "As you open the cover of the tome, and flip the pages. Most of the pages are stuck together, apart from pages 3, 6, 12.",
+                "tome"
+                )
+        self.page3 = Item(
+                "This page doesn't seem to include any useful information",
+                "page 3",
+        )
+        self.page6 = Item(
+                "This page doesn't seem to include any useful information",
+                "page 6",
+        )
+        self.page12 = Item(
+                "On this page the raven squawks incessantly, indicating importance. At the top of the page, there's a date: 24th January 1939",
+                "page 12",
+        )
+        self.exitdoor = Item(
+                "There is another keypad, this time with 6 digits",
+                "exit"
+        )
+        self.cupboard = Item(
+                "It's locked with a padlock",
+                "cupboard",
+                )
 
 
         ####### add a Lock ###############
 
         self.locked = True # start with the room locked
         # a lock is defined as Lock("puzzle_answer", "description", "name")
-        self.padlock = Lock("9999",
-                            "The padlock has a 4 number combination to unlock",
-                            "padlock")
+        self.keypad = Lock(
+                "390124",
+                "The keypad has a 6 number combination to unlock",
+                "keypad"
+        )
+        self.padlock = Lock(
+                "256",
+                "The cupboard is locked with a padlock with a 3-digit code",
+                "padlock"
+        )
 
         # add as many locks as you like
         # e.g.
         # self.treasure_chest= Lock("answer","description of puzzle", "chest")
 
         ##### add all you items and locks to an inventory ###########
-        self.items = Bag({self.padlock})
+        self.items = Bag({
+                self.raven,
+                self.tome,
+                self.page3,
+                self.page6,
+                self.page12,
+                self.exitdoor,
+                self.keypad,
+                self.padlock,
+                self.cupboard,
+        })
 
     # Unlock the room by setting this test lock method. Once all the locks are open
     # the puzzle can be unlocked. You can implement this method how you like. Delete pass
@@ -41,11 +118,23 @@ class StoreRoom(EscapeRoom):
         #     self.locked=True
         # else:
         #     self.locked=False
-        pass
+        
+        if self.padlock.locked:
+                self.locked = True
+                print("The cupboard is locked")
+        else:
+                self.locked = False
+                print("As you enter the code, the cupboard doors swung open and the only thing inside is a leather bound old tome")
+                
+        
+        if self.keypad.locked:
+                self.locked = True
+        else:
+                self.locked = False
 
     # Define the escape in this method. This will be triggered once all the puzzles are completed
     def escape(self):
-        self.escape_room("direction", "description of what happens next")
-       # e.g  self.escape_room("east","The door slides open reavealing the next room")
+        print("The door opens, the raven squawks with joy and flies out of the room with you")
+        
 
 
