@@ -104,6 +104,8 @@ def try_lock(lock):
         if type(obj) is Lock:
             current_lock.add(obj)
             say(f"Enter the key to unlock {lock}")
+            if obj.name=='lift':
+                say(current_puzzle.lift_state)
         else:
             say(f"{lock} is not a lock.")
     else:
