@@ -1,16 +1,4 @@
-─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-─██████████████─██████████████─██████████████─██████████████─██████████████─██████████████────██████████████─██████──██████─██████████████────██████─────────██████████████─██████████████───
-─██░░░░░░░░░░██─██░░░░░░░░░░██─██░░░░░░░░░░██─██░░░░░░░░░░██─██░░░░░░░░░░██─██░░░░░░░░░░██────██░░░░░░░░░░██─██░░██──██░░██─██░░░░░░░░░░██────██░░██─────────██░░░░░░░░░░██─██░░░░░░░░░░██───
-─██░░██████████─██░░██████████─██░░██████████─██░░██████░░██─██░░██████░░██─██░░██████████────██████░░██████─██░░██──██░░██─██░░██████████────██░░██─────────██░░██████░░██─██░░██████░░██───
-─██░░██─────────██░░██─────────██░░██─────────██░░██──██░░██─██░░██──██░░██─██░░██────────────────██░░██─────██░░██──██░░██─██░░██────────────██░░██─────────██░░██──██░░██─██░░██──██░░██───
-─██░░██████████─██░░██████████─██░░██─────────██░░██████░░██─██░░██████░░██─██░░██████████────────██░░██─────██░░██████░░██─██░░██████████────██░░██─────────██░░██████░░██─██░░██████░░████─
-─██░░░░░░░░░░██─██░░░░░░░░░░██─██░░██─────────██░░░░░░░░░░██─██░░░░░░░░░░██─██░░░░░░░░░░██────────██░░██─────██░░░░░░░░░░██─██░░░░░░░░░░██────██░░██─────────██░░░░░░░░░░██─██░░░░░░░░░░░░██─
-─██░░██████████─██████████░░██─██░░██─────────██░░██████░░██─██░░██████████─██░░██████████────────██░░██─────██░░██████░░██─██░░██████████────██░░██─────────██░░██████░░██─██░░████████░░██─
-─██░░██─────────────────██░░██─██░░██─────────██░░██──██░░██─██░░██─────────██░░██────────────────██░░██─────██░░██──██░░██─██░░██────────────██░░██─────────██░░██──██░░██─██░░██────██░░██─
-─██░░██████████─██████████░░██─██░░██████████─██░░██──██░░██─██░░██─────────██░░██████████────────██░░██─────██░░██──██░░██─██░░██████████────██░░██████████─██░░██──██░░██─██░░████████░░██─
-─██░░░░░░░░░░██─██░░░░░░░░░░██─██░░░░░░░░░░██─██░░██──██░░██─██░░██─────────██░░░░░░░░░░██────────██░░██─────██░░██──██░░██─██░░░░░░░░░░██────██░░░░░░░░░░██─██░░██──██░░██─██░░░░░░░░░░░░██─
-─██████████████─██████████████─██████████████─██████──██████─██████─────────██████████████────────██████─────██████──██████─██████████████────██████████████─██████──██████─████████████████─
-─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+# ESCAPE THE LAB
 
 Text-based adventure with a modern twist! Build an escape room where to exit you have to solve a series of puzzles.
 This game uses the package `adventurelib` which provides nice decorators and classes for easily writing text based adventure games.
@@ -118,6 +106,7 @@ examine clock
 They will get the following returned:
 ```
 The clocks hands are stuck at 17 minutes past 11
+>
 ```
 
 ### Defining you Locks and unlocking the room
@@ -139,5 +128,41 @@ If a player examines a lock (using the `examine` command) then they will be retu
 ```
 try padlock
 A rusty padlock holds together a thick chain wrapped tightly around the gates. It needs a large key to open it
+>
 
 ```
+
+To unlock the padlock the player can write
+```
+enter old key
+The answer is correct. You have unlocked the lock
+>
+```
+
+To unlock the room you need to edit the `room_complete` function. This is where you build your logic for how to exit your room. The simplest room completed function is shown below.
+There is one lock - the padlock and when it is is unlocked the whole room unlocks.
+
+```
+    # Unlock the room by setting this test lock method. Once all the locks are open
+    # the puzzle can be unlocked. You can implement this method how you like. Delete pass
+    # and put your code in the place. An example is in the comments.
+    def room_completed(self):
+
+         if self.padlock.locked:
+             self.locked=True
+         else:
+            self.locked=False
+
+```
+If you add more locks then this logic becomes more complicated.
+
+Once the room is complete you want to give a description of what happens next and hint to your player which direction they would like to go in. You can do this by editing the
+`escape` function. The `escape` function must not take any arguments (remain a void method), but you can edit the `self.escape_room` function to give the direction of your escape,
+set by the [`self.escape_direction`](#define-your-room) variable, and then a description of what happens when you escape the room e.g  `self.escape_room("east","The door slides open reavealing the next room")`
+```
+   # Define the escape in this method. This will be triggered once all the puzzles are completed
+    def escape(self):
+        self.escape_room("direction", "description of what happens next")
+
+```
+Do all this and you can complete your puzzle
