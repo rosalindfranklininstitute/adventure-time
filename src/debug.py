@@ -114,31 +114,18 @@ def lock_the_room():
 
     ######################### Add Puzzles #########################
 
-    entrance = Entrance()
-    staircase =  Staircase()
-    store_room =  StoreRoom()
-    wet_lab =  WetLab()
-    microscope_hall =  MicroscopeHall()
+    my_puzzle = Entrance() # change this to be the name of your puzzle
 
     ############### Add directional relationship #################
 
-    entrance.room.north = staircase
-    staircase.room.south = entrance
+    # This allows you to test escaping to another room
+    finish_room = Finish()
 
-    staircase.room.east = store_room
-    store_room.room.west = staircase
-
-    store_room.room.north = wet_lab
-    wet_lab.room.south = store_room
-
-
-    wet_lab.room.west = microscope_hall
-    microscope_hall.room.east = wet_lab
-
-    microscope_hall.room.west = Finish()
+    my_puzzle.room.north = finish_room  # You need to edit this line so it has the escape direction of your room
+    #e.g my_puzzle.room.west = finish_room
 
     #############  Set start room and start game ####################
     global current_puzzle
-    current_puzzle = entrance
+    current_puzzle = my_puzzle
     say(current_puzzle.room)
     start()
