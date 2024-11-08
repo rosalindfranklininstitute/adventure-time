@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "adventuretime"
 dynamic = ["version"]
 dependencies = [ "adventurelib" ]
-requires-python = ">=3.12"
+requires-python = ">=3.11"
 authors = [ {name = "Laura Shemilt", email = "lashemilt@gmail.com"}]
 description = "Text based escape room"
 readme  = {file="README.md", content-type="markdown"}
