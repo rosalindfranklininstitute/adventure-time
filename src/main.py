@@ -214,7 +214,7 @@ def lock_the_room():
     wet_lab.room.west = microscope_hall
     microscope_hall.room.east = wet_lab
 
-    microscope_hall.room.west = Finish()
+    microscope_hall.room.north = Finish()
 
     #############  Set start room and start game ####################
     global current_puzzle
