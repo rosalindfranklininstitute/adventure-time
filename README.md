@@ -41,7 +41,7 @@ and not work your way through the rooms.  You can edit the `debug.py` file to pl
 
 ## The Game Playing script
 
-They game playing script is based on
+They game playing script is based on the python package [`adventurelib`](https://adventurelib.readthedocs.io/en/stable/intro.html#starting-a-project). It can be found in `src/main.py`. Examples of using  `aventurelib` outside of the `ESCAPE THE LAB` format can be found in `demo.py`
 
 ## Creating your Puzzle
 
