@@ -30,7 +30,7 @@ class Entrance(EscapeRoom):
         #Add all your items to an iventory
         self.items = Bag({self.keypad, self.clock, self.papers, self.desk, self.doors})
 
-        self.locked = self.room_completed()
+        self.locked = True
 
 
 
