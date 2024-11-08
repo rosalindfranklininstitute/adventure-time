@@ -48,11 +48,11 @@ class StoreRoom(EscapeRoom):
 
         ##### add some items to give clues of the puzzles ###########
         self.raven = Item(
-                r"You listen carefully to the raven's pat.\npat pat ...... pat pat pat pat pat ...... pat pat pat pat pat pat...\npat pat ...... pat pat pat pat pat ...... pat pat pat pat pat pat... It's eyes now glare INTENSELY between two objects, the door to the exit and a cupboard in the corner of the room.",
+                "A raven looms, its jet black feathers absorbing the light, casting an unsettling shadow. Its eyes glint with an unnatural intelligence, dark and watchul, as if peering straight into your soul. The beak is long and razor-sharp, and when it opens, a harsh, guttaral caw echoes, carrying an ominous weight, as though it brings a message from the other side. You listen carefully to the raven's pat.\n               pat pat ...... pat pat pat pat pat ...... pat pat pat pat pat pat... \n        pat pat ...... pat pat pat pat pat ...... pat pat pat pat pat pat... It's eyes now glare INTENSELY between two objects, the door to the exit and a cupboard in the corner of the room.",
                 "raven"
                 )
         self.tome = Item(
-                "As you open the cover of the tome, and flip the pages. Most of the pages are stuck together, apart from pages 3, 6, 12.",
+                "The old book rests with a cracked, faded leather cover and yellow pages that smell faintly musty. The spine is worn and each delicate page whispers softly, holding secrets from long ago. As you open the cover of the tome, and flip the pages. Most of the pages are stuck together, apart from pages 3, 6, 12.",
                 "tome"
                 )
         self.page3 = Item(
@@ -72,7 +72,7 @@ class StoreRoom(EscapeRoom):
                 "exit"
         )
         self.cupboard = Item(
-                "It's locked with a padlock",
+                "A spooky cupboard stands in the corner, its dak wood weathered and creaking, with dusty shadowed shelves cloaked in cobwebs. It's locked with a padlock",
                 "cupboard",
                 )
 
