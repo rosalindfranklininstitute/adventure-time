@@ -12,10 +12,10 @@ escape rooms for another team to play.
 In the lab there are 6 puzzles that follow this map:
 
 
-[ Map ](docs/Escape_Room_Map.png)
+![ Map ](docs/Escape_Room_Map.png)
 
 
-Puzzles contain a Room, Items and Locks. A puzzle can contain as many Items and Locks as you wish, but can only contain a single Room. If you define more than one Room variable then your
+Puzzles contain a [Room](#define-your-room), [Items](#define-your-items) and [Locks](#defining-you-locks-and-unlocking-the-room). A puzzle can contain as many Items and Locks as you wish, but can only contain a single Room. If you define more than one Room variable then your
 puzzle will not play correctly. Each puzzle has an `escape_direction` which corresponds to the direction you need to go to make it to the next room. Please do not change this variable as the map
 is set. The flow of play is indicated on the map. There are two special puzzles the Entrance and the Finish. Entrance is a prepopulated example to show you how to set puzzle and the Finish puzzle is
 an unlocked puzzle which lets the user finish the game.
@@ -165,4 +165,35 @@ set by the [`self.escape_direction`](#define-your-room) variable, and then a des
         self.escape_room("direction", "description of what happens next")
 
 ```
-Do all this and you can complete your puzzle
+Do all this and you can complete your puzzle.
+
+# Testing your puzzle in debug mode
+Ideally you do not what to have to play all the rooms to test out your room so we have a debug mode where you can test out your room. Open the file `debug.py`
+and edit in two places:
+
+Firstly add your room by editing the variable `my_puzzle` to instantiate your class.
+```
+############################## Game Loop ##########################################
+def lock_the_room():
+
+    ######################### Add Puzzles #########################
+
+    my_puzzle = Entrance() # change this to be the name of your puzzle
+```
+
+Then finally you need to edit the relationship between your room and the finsih room.
+```
+    ############### Add directional relationship #################
+
+    # This allows you to test escaping to another room
+    finish_room = Finish()
+
+    my_puzzle.room.north = finish_room  # You need to edit this line so it has the escape direction of your room
+    #e.g my_puzzle.room.west = finish_room
+```
+So if your `self.escape_direction` is `east` you would edit the line to look like this:
+```
+my_puzzle.room.east= finish_room  # You need to edit this line so it has the escape direction of your room
+```
+
+To [play your game](#playing-the-game) run `adventure-time-debug` in the terminal.
