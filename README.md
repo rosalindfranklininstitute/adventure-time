@@ -197,3 +197,39 @@ my_puzzle.room.east= finish_room  # You need to edit this line so it has the esc
 ```
 
 To [play your game](#playing-the-game) run `adventure-time-debug` in the terminal.
+
+## Player Actions
+
+Player Actions have to be defined in the game script e.g. `main.py` of `debug.py` . Currently there are these actions:
+```
+go DIRECTION
+examine ITEM
+try LOCK
+enter KEY
+where am i
+is it open
+```
+
+Players can see what actions they have by running the `help` command in the game prompt.
+
+You can add another action to the game. If you do it will be available to all players. Please test it first in `debug.py`
+to check it works.
+```
+############ Define Player Actions #################
+
+@when('examine ITEM')
+def examine(item):
+    """T
+    Enter 'examine <item_name>' into game prompt to get the description of items in a room. e.g. > examine box
+
+    Args:
+        item (str): the name of the item.
+    """
+
+    if item in current_puzzle.items:
+        current_item = current_puzzle.items.find(item)
+        say(current_item)
+    else:
+        say(f'There is no {item} in this room')
+```
+To find more examples please see the `demo.py` script.
