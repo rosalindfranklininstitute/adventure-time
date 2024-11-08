@@ -48,7 +48,7 @@ class StoreRoom(EscapeRoom):
 
         ##### add some items to give clues of the puzzles ###########
         self.raven = Item(
-                "A raven looms, its jet black feathers absorbing the light, casting an unsettling shadow. Its eyes glint with an unnatural intelligence, dark and watchul, as if peering straight into your soul. The beak is long and razor-sharp, and when it opens, a harsh, guttaral caw echoes, carrying an ominous weight, as though it brings a message from the other side. You listen carefully to the raven's pat.\n               pat pat ...... pat pat pat pat pat ...... pat pat pat pat pat pat... \n        pat pat ...... pat pat pat pat pat ...... pat pat pat pat pat pat... It's eyes now glare INTENSELY between two objects, the door to the exit and a cupboard in the corner of the room.",
+                "A raven looms, its jet black feathers absorbing the light, casting an unsettling shadow. Its eyes glint with an unnatural intelligence, dark and watchul, as if peering straight into your soul. The beak is long and razor-sharp, and when it opens, a harsh, guttaral caw echoes, carrying an ominous weight, as though it brings a message from the other side. You listen carefully to the raven's pat. < pat pat ...... pat pat pat pat pat ...... pat pat pat pat pat pat... > It's eyes now glare INTENSELY between two objects, the door to the exit and a cupboard in the corner of the room.",
                 "raven"
                 )
         self.tome = Item(
