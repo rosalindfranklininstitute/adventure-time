@@ -43,6 +43,4 @@ class Entrance(EscapeRoom):
 
 
     def escape(self):
-            self.locked =False
-            say("You push the door, it yields and slowly creeps open.")
-            say(f"Go { self.escape_direction} for next room")
+        pass

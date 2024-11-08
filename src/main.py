@@ -109,6 +109,39 @@ def try_lock(lock):
     else:
         say(f"There is no {lock} in this room")
 
+
+@when('ascend')
+def ascend():
+    """
+    Used for staircase puzzle
+    """
+    global current_puzzle
+    if not isinstance(current_puzzle, Staircase):
+        print("Cannot ascend in this room.")
+    else:
+        if current_puzzle.floor < 4:
+            current_puzzle.floor += 1
+            print(current_puzzle.floor_descriptions[current_puzzle.floor])
+        else:
+            print("Cannot ascend")
+
+
+@when('descend')
+def descend():
+    """
+    Used for staircase puzzle
+    """
+    global current_puzzle
+    if not isinstance(current_puzzle, Staircase):
+        print("Cannot ascend in this room.")
+    else:
+        if current_puzzle.floor > 0:
+            current_puzzle.floor -= 1
+            print(current_puzzle.floor_descriptions[current_puzzle.floor])
+        else:
+            print("Cannot descend")
+
+
 @when('go north', direction='north')
 @when('go south', direction='south')
 @when('go east', direction='east')
