@@ -36,7 +36,7 @@ To exit the game, type `quit` into the game prompt.
 ### Development mode
 
 To play the game in development mode use `pip intall -e .`. You can make changes to the code which will be entered into the game every time you launch `adventure-time`.
-You can also test your room by playing in debug mode. To play in debug mode type `adventure-time-debug` into the console. The debug mode allows you to play a single puzzle,
+You can also test your room by playing in debug mode. To play in debug mode type `adventure-debug` into the console. The debug mode allows you to play a single puzzle,
 and not work your way through the rooms.  You can edit the `debug.py` file to play the puzzle you are developing and test that the methods are working.
 
 ## The Game Playing script
@@ -196,7 +196,7 @@ So if your `self.escape_direction` is `east` you would edit the line to look lik
 my_puzzle.room.east= finish_room  # You need to edit this line so it has the escape direction of your room
 ```
 
-To [play your game](#playing-the-game) run `adventure-time-debug` in the terminal.
+To [play your game](#playing-the-game) run `adventure-debug` in the terminal.
 
 ## Player Actions
 
