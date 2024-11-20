@@ -59,7 +59,7 @@ There's a keypad here.
                            "keypad"
                            )
         self.lift = Lock("ben davis",
-                         "There is surprisingly a high tech lift in the corner. You can press buttons to ascend or descend",
+                         "There is surprisingly a high tech lift in the corner. It has a buttons for the floors and a basement",
                          "lift")
 
         # add as many locks as you like
@@ -78,14 +78,14 @@ There's a keypad here.
         if not self.keypad.locked:
                 say("The lift sounds like it is working now.")
                 msg = \
-"""
-A booming voice shouts out:
-ANSWER MY RIDDLE, IF YOU WOULD LIKE TO DESCEND BELOW:
-MY NAME YOU SEEK, IF YOU WISH TO PASS.
-I AM HEAD OF THE THEME THAT IS LAST.
-ALL SHALL FEAR ME, AND MY CRAFT.
-SPEAK, AND ENTER, FOR CONICAL FLASKS.
-"""
+                        """
+                        A booming voice shouts out:
+                        ANSWER MY RIDDLE, IF YOU WOULD LIKE TO DESCEND BELOW:
+                        MY NAME YOU SEEK, IF YOU WISH TO PASS.
+                        I AM HEAD OF THE THEME THAT IS LAST.
+                        ALL SHALL FEAR ME, AND MY CRAFT.
+                        SPEAK, AND ENTER, FOR CONICAL FLASKS.
+                        """
                 self.lift_state = msg
 
         if not self.lift.locked:
