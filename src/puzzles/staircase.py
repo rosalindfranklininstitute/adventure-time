@@ -35,12 +35,12 @@ The sign is for SB this time. You're starting to notice the themes. It's a shame
 You have reached the top floor. Hang on, why isn't there any chemistry?
 There's a keypad here.
 """
-                
+
         ]
         self.floor = 0
         self.room = Room(self.floor_descriptions[0])
         self.lift_state = "The lift judders, but doesn't move. You suppose you'll have to try the stairs."
-        
+
 
         self.escape_direction = "east" # escape direction of the room. Do not delete of change this property
 
@@ -59,7 +59,7 @@ There's a keypad here.
                            "keypad"
                            )
         self.lift = Lock("ben davis",
-                         "lift description",
+                         "There is surprisingly a high tech lift in the corner. You can press buttons to ascend or descend",
                          "lift")
 
         # add as many locks as you like
@@ -81,13 +81,13 @@ There's a keypad here.
 """
 A booming voice shouts out:
 ANSWER MY RIDDLE, IF YOU WOULD LIKE TO DESCEND BELOW:
-MY NAME YOU SEEK, IF YOU WISH TO PASS. 
+MY NAME YOU SEEK, IF YOU WISH TO PASS.
 I AM HEAD OF THE THEME THAT IS LAST.
 ALL SHALL FEAR ME, AND MY CRAFT.
 SPEAK, AND ENTER, FOR CONICAL FLASKS.
 """
                 self.lift_state = msg
-        
+
         if not self.lift.locked:
                 self.locked = False
                 print("The lift takes you to the next room.")
