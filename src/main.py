@@ -5,7 +5,7 @@ from puzzles import *
 
 ########### Setting up inventories ##################
 
-player_inventory = Bag() # Players can add Items to their bag
+player_inventory = Bag() # Players can add es to their bag
 current_lock = Bag() # special bag that only contains the current lock the player is trying to solve
 
 ############ Define Player Actions #################
@@ -143,6 +143,15 @@ def descend():
         else:
             print("Cannot descend")
 
+@when('look')
+def look():
+    if current_puzzle.items:
+        for i in current_puzzle.items:
+            item_name = i.aliases[-1]
+            if item_name[-1] == 's':
+                say(f'Some {item_name} are here')
+            else:
+                say(f'A {item_name} is here')
 
 @when('go north', direction='north')
 @when('go south', direction='south')
