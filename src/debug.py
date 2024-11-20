@@ -108,6 +108,16 @@ def whereami():
     """
     say(current_puzzle.room)
 
+@when('look')
+def look():
+    if current_puzzle.items:
+        for i in current_puzzle.items:
+            item_name = i.aliases[-1]
+            if item_name[-1] == 's':
+                say(f'Some {item_name} are here')
+            else:
+                say(f'A {item_name} is here')
+
 
 ############################## Game Loop ##########################################
 def lock_the_room():

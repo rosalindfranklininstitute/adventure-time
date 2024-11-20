@@ -5,7 +5,7 @@ from puzzles import *
 
 ########### Setting up inventories ##################
 
-player_inventory = Bag() # Players can add es to their bag
+player_inventory = Bag() # Players can add Items to their bag
 current_lock = Bag() # special bag that only contains the current lock the player is trying to solve
 
 ############ Define Player Actions #################
