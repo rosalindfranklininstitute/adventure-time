@@ -8,8 +8,8 @@ class Staircase(EscapeRoom):
         self.floor_descriptions = [
 """
 You find yourself at the foot of a staircase. It looks like it hasn't been used in a hundred years. Wasn't the RFI built more recently than that?
-I certiainly don't think that the stairs were built out of wood, and surrounded by torchces. Huh. Paul Matthews must have remodelled over the weekend.
-Along the opposite wall to the torches, you see a picture of MS image of a brain, an electron microscope, and a 96 well plate.
+I certiainly don't think that the stairs were built out of wood, and surrounded by torchces. Huh. They must have remodelled over the weekend.
+Along the opposite wall to the torches, you see a picture of Mass Spec image of a brain, an electron microscope, and a 96 well plate.
 At the top of the flight of stairs, you see a sign for Mass Spec. Since when do they get their own floor?
 To your right you see a lift with the doors already open.
 """,
@@ -58,7 +58,7 @@ There's a keypad here.
                            "The padlock has a 4 number combination to unlock",
                            "keypad"
                            )
-        self.lift = Lock("ben davis",
+        self.lift = Lock("mendeleev",
                          "There is surprisingly a high tech lift in the corner. It has a buttons for the floors and a basement",
                          "lift")
 
@@ -82,9 +82,9 @@ There's a keypad here.
                         A booming voice shouts out:
                         ANSWER MY RIDDLE, IF YOU WOULD LIKE TO DESCEND BELOW:
                         MY NAME YOU SEEK, IF YOU WISH TO PASS.
-                        I AM HEAD OF THE THEME THAT IS LAST.
-                        ALL SHALL FEAR ME, AND MY CRAFT.
-                        SPEAK, AND ENTER, FOR CONICAL FLASKS.
+                        I INVENTED AN ITEM YOU NEED IN CHEMISTRY CLASS.
+                        NOT FURNITURE, BUT STILL KNOWN AS A TABLE.
+                        CONTAINS ALL ELEMENTS, ROBUST AND UNSTABLE.
                         """
                 self.lift_state = msg
 
