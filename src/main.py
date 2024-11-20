@@ -143,6 +143,15 @@ def descend():
         else:
             print("Cannot descend")
 
+@when('look')
+def look():
+    if current_puzzle.items:
+        for i in current_puzzle.items:
+            item_name = i.aliases[-1]
+            if item_name[-1] == 's':
+                say(f'Some {item_name} are here')
+            else:
+                say(f'A {item_name} is here')
 
 @when('go north', direction='north')
 @when('go south', direction='south')
