@@ -62,12 +62,14 @@ There's a keypad here.
                          "There is surprisingly a high tech lift in the corner. It has a buttons for the floors and a basement",
                          "lift")
 
+        self.pictures = Item("A code lies within us, over all floors, ascend to find out more", "pictures")
+
         # add as many locks as you like
         # e.g.
         # self.treasure_chest= Lock("answer","description of puzzle", "chest")
 
         ##### add all you items and locks to an inventory ###########
-        self.items = Bag({self.keypad, self.lift})
+        self.items = Bag({self.keypad, self.lift, self.pictures})
 
 
 
