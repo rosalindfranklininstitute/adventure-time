@@ -119,16 +119,13 @@ class StoreRoom(EscapeRoom):
         # else:
         #     self.locked=False
 
-        if self.padlock.locked:
+        if self.padlock.locked and self.keypad.locked:
                 self.locked = True
                 print("The cupboard is locked")
-        else:
-                self.locked = False
-                print("As you enter the code, the cupboard doors swung open and the only thing inside is a leather bound old tome")
-
-
-        if self.keypad.locked:
+        elif not self.padlock.locked and self.keypad.locked:
                 self.locked = True
+                print("As you enter the code, the cupboard doors swing open and the only thing inside is a leather bound old tome")
+                print("The exit remains locked ")
         else:
                 self.locked = False
 
