@@ -109,6 +109,9 @@ class StoreRoom(EscapeRoom):
                 self.cupboard,
         })
 
+        self.items_locked = {"bag": Bag({ self.page3,self.page6,self.page12,self.tome,}),
+                             "lock":"padlock"}
+
     # Unlock the room by setting this test lock method. Once all the locks are open
     # the puzzle can be unlocked. You can implement this method how you like. Delete pass
     # and put your code in the place. An example is in the comments.
@@ -119,10 +122,22 @@ class StoreRoom(EscapeRoom):
         # else:
         #     self.locked=False
 
+<<<<<<< HEAD
         if self.padlock.locked and self.keypad.locked:
                 self.locked = True
                 print("The cupboard is locked")
         elif not self.padlock.locked and self.keypad.locked:
+=======
+        if self.padlock.locked:
+                self.locked = True
+                print("The cupboard is locked")
+        else:
+                self.locked = False
+                print("As you enter the code, the cupboard doors swung open and the only thing inside is a leather bound old tome")
+
+
+        if self.keypad.locked:
+>>>>>>> updating look function so it won't reveal items that are hidden behind locks
                 self.locked = True
                 print("As you enter the code, the cupboard doors swing open and the only thing inside is a leather bound old tome")
                 print("The exit remains locked ")
@@ -131,7 +146,11 @@ class StoreRoom(EscapeRoom):
 
     # Define the escape in this method. This will be triggered once all the puzzles are completed
     def escape(self):
+<<<<<<< HEAD
         print("The door opens, the spider squawks with joy and returns to settle in the centre of its web")
+=======
+        print("The door opens, the raven squawks with joy and flies out of the room with you")
+>>>>>>> updating look function so it won't reveal items that are hidden behind locks
 
 
 
