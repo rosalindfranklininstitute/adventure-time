@@ -14,8 +14,8 @@ class StoreRoom(EscapeRoom):
                 You pull a crusty string beside you and a flickering light reveals a small, crowded room filled with cupboards and boxes.
                 The items inside the boxes range from old monitors to unlabelled jars with gooey substances, some glowing and other not.
                  Suddenly a loud squawk draws your attention to a dark corner of the room where two beady eyes glare back at you whilst it pats its feet rhythmically.
-                
-                
+
+
                 ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠿⠿⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
                 ⣿⣿⣿⣿⣿⣿⣿⡿⠟⠋⢉⡉⠙⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠛⠋⣉⣥⣤⣤⣶⣶⣶⣦⣤⣤⣉⡉⠛⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⠉⣉⠙⠛⠿⣿⣿⣿⣿⣿⣿⣿⣿
                 ⣿⣿⣿⣿⡿⠛⢁⣠⣶⣿⣿⣿⣿⣶⣤⡈⠛⢿⣿⣿⠿⠋⣁⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣶⣄⡉⠻⢿⣿⣿⠟⠉⣠⣴⣾⣿⣿⣿⣷⣦⣄⠙⠻⣿⣿⣿⣿⣿
@@ -47,9 +47,9 @@ class StoreRoom(EscapeRoom):
         self.escape_direction = "north" # escape direction of the room. Do not delete of change this property
 
         ##### add some items to give clues of the puzzles ###########
-        self.raven = Item(
-                "A raven looms, its jet black feathers absorbing the light, casting an unsettling shadow. Its eyes glint with an unnatural intelligence, dark and watchul, as if peering straight into your soul. The beak is long and razor-sharp, and when it opens, a harsh, guttaral caw echoes, carrying an ominous weight, as though it brings a message from the other side. You listen carefully to the raven's pat. < pat pat ...... pat pat pat pat pat ...... pat pat pat pat pat pat... > It's eyes now glare INTENSELY between two objects, the door to the exit and a cupboard in the corner of the room.",
-                "raven"
+        self.spider = Item(
+                "A spider looms, its jet black body absorbing the light, casting an unsettling shadow. Its eyes glint with an unnatural intelligence, dark and watchul, as if peering straight into your soul. The pincers long and razor-sharp, and when they opens, a harsh, guttaral caw echoes, carrying an ominous weight, as though it brings a message from the other side. You listen carefully to the spiders's pat.\n < pat pat ...... pat pat pat pat pat ...... pat pat pat pat pat pat... > \n It's eyes now glare INTENSELY between two objects, the door to the exit and a cupboard in the corner of the room.",
+                "spider"
                 )
         self.tome = Item(
                 "The old book rests with a cracked, faded leather cover and yellow pages that smell faintly musty. The spine is worn and each delicate page whispers softly, holding secrets from long ago. As you open the cover of the tome, and flip the pages. Most of the pages are stuck together, apart from pages 3, 6, 12.",
@@ -64,7 +64,7 @@ class StoreRoom(EscapeRoom):
                 "page 6",
         )
         self.page12 = Item(
-                "On this page the raven squawks incessantly, indicating importance. At the top of the page, there's a date: 24th January 1939",
+                "On this page the spider squawks incessantly, indicating importance. At the top of the page, there's a date: 24th January 1939",
                 "page 12",
         )
         self.exitdoor = Item(
@@ -98,7 +98,7 @@ class StoreRoom(EscapeRoom):
 
         ##### add all you items and locks to an inventory ###########
         self.items = Bag({
-                self.raven,
+                self.spider,
                 self.tome,
                 self.page3,
                 self.page6,
@@ -118,15 +118,15 @@ class StoreRoom(EscapeRoom):
         #     self.locked=True
         # else:
         #     self.locked=False
-        
+
         if self.padlock.locked:
                 self.locked = True
                 print("The cupboard is locked")
         else:
                 self.locked = False
                 print("As you enter the code, the cupboard doors swung open and the only thing inside is a leather bound old tome")
-                
-        
+
+
         if self.keypad.locked:
                 self.locked = True
         else:
@@ -135,6 +135,6 @@ class StoreRoom(EscapeRoom):
     # Define the escape in this method. This will be triggered once all the puzzles are completed
     def escape(self):
         print("The door opens, the raven squawks with joy and flies out of the room with you")
-        
+
 
 
