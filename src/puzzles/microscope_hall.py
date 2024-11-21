@@ -16,6 +16,7 @@ class MicroscopeHall(EscapeRoom):
         self.book = Item("This is a well-thumbed copy of Microscopes for Dummies. A parchment falls out of the book.", "book")
         self.fragment = Item("This code could be the key to help you unlock the door, reveal a map, or open a chest as part of their adventure!\nI - 3 = F\nL - 3 = I\nT - 3 = Q\nU - 3 = R\nY - 3 = V", "fragment")
         self.table = Item("On the table are 3 test tubes. The test tubes are labelled Germanium, Sulfur, Tantalum", "table")
+        self.test_tubes=Item("The test tubes are labelled Germanium, Sulfur, Tantalum", "test tubes")
         ####### add a Lock ###############
 
         self.locked = True # start with the room locked
@@ -23,18 +24,18 @@ class MicroscopeHall(EscapeRoom):
         self.parchment = Lock("utility",
                 "You see an old piece of parchment. It is very fragile and a fragment falls off it. On it, written in an elegant script, is the following message: In science, the true key lies in UTILITY - uncovering knowledge that serves a purpose. Use the code of *Caesar* to find the path forward by stepping back three steps in your quest. Here is the encrypted message: RQFIFQV. ",
                             "parchment")
-        
+
         self.guinea_pig = Lock("2018", "As you examine the guinea pig, you squeeze it and it speaks to you: In a year, not long ago, a vision took its flight. To push the bounds of science with technology in sight. Named for a pioneer, whose work we now commend, this institute was founded, a future to transcend. What year did this journey begin?", "guinea_pig")
-        
+
         self.chest = Lock("stage", "The chest is an ancient wooden box with a large alphabetic lock. There's a note pinned to the chest saying: Enter the microscope component that the elements spell.", "chest")
-        
-        
+
+
         # add as many locks as you like
         # e.g.
         #self.book = Lock("A","description of puzzle", "book")
 
         ##### add all you items and locks to an inventory ###########
-        self.items = Bag({self.parchment, self.guinea_pig,self.book, self.fragment, self.chest, self.table})
+        self.items = Bag({self.parchment, self.guinea_pig,self.book, self.fragment, self.chest, self.table, self.test_tubes})
 
     # Unlock the room by setting this test lock method. Once all the locks are open
     # the puzzle can be unlocked. You can implement this method how you like. Delete pass
