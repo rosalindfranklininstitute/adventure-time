@@ -8,39 +8,39 @@ class Staircase(EscapeRoom):
         self.floor_descriptions = [
 """
 You find yourself at the foot of a staircase. It looks like it hasn't been used in a hundred years. Wasn't the RFI built more recently than that?
-I certiainly don't think that the stairs were built out of wood, and surrounded by torchces. Huh. Paul Matthews must have remodelled over the weekend.
-Along the opposite wall to the torches, you see a picture of MS image of a brain, an electron microscope, and a 96 well plate.
-At the top of the flight of stairs, you see a sign for Mass Spec. Since when do they get their own floor?
+I certiainly don't think that the stairs were built out of wood, and surrounded by torchces. Huh. They must have remodelled over the weekend.
+Along the opposite wall to the torches, you see a picture of Mass Spectrometry image of a brain, an electron microscope, and a 96 well plate.
+At the top of the flight of stairs, you see a sign for the Mass Spectrometry theme. Since when do they get their own floor?
 To your right you see a lift with the doors already open.
 """,
 
 """
 You find yourself at the foot of another flight of stairs. There are ten pictures along the wall, and the penultimate is a microscope.
-At the top of the stairs you see a sign for CI. I thought they had to share a floor too?
+At the top of the stairs you see a sign for the theme of Correlated Imaging. I thought they had to share a floor too?
 """,
 
 """
 You find youself at the foot of another flight of stairs. There are ten more pictures.
 You spend a while looking at a lovely landscape before realising that you should move on. You've stayed here too long.
 The second picture was much more boring so it's fine, it was just a server rack or something.
-At the top you see a sign for AI&I.
+At the top you see a sign for the Artificial Intelligence theme.
 """,
 
 """
 You find yourself at the foot of another flight of stairs. There are more pictures and another sign.
-The sign is for SB this time. You're starting to notice the themes. It's a shame that this staircase doesn't have pictures of llamas.
+The sign is for Structural Biology this time. You're starting to notice the themes. It's a shame that this staircase doesn't have pictures of llamas.
 """,
 
 """
 You have reached the top floor. Hang on, why isn't there any chemistry?
 There's a keypad here.
 """
-                
+
         ]
         self.floor = 0
         self.room = Room(self.floor_descriptions[0])
         self.lift_state = "The lift judders, but doesn't move. You suppose you'll have to try the stairs."
-        
+
 
         self.escape_direction = "east" # escape direction of the room. Do not delete of change this property
 
@@ -58,8 +58,8 @@ There's a keypad here.
                            "The padlock has a 4 number combination to unlock",
                            "keypad"
                            )
-        self.lift = Lock("ben davis",
-                         "lift description",
+        self.lift = Lock("mendeleev",
+                         "There is surprisingly a high tech lift in the corner. It has a buttons for the floors and a basement",
                          "lift")
 
         # add as many locks as you like
@@ -78,22 +78,21 @@ There's a keypad here.
         if not self.keypad.locked:
                 say("The lift sounds like it is working now.")
                 msg = \
-"""
-A booming voice shouts out:
-ANSWER MY RIDDLE, IF YOU WOULD LIKE TO DESCEND BELOW:
-MY NAME YOU SEEK, IF YOU WISH TO PASS. 
-I AM HEAD OF THE THEME THAT IS LAST.
-ALL SHALL FEAR ME, AND MY CRAFT.
-SPEAK, AND ENTER, FOR CONICAL FLASKS.
-"""
+                        """
+                        A booming voice shouts out: \n
+                        MY NAME YOU SEEK, IF YOU WISH TO PASS. \n
+                        I INVENTED AN ITEM YOU NEED IN CHEMISTRY CLASS. \n
+                        NOT FURNITURE, BUT STILL KNOWN AS A TABLE. \n
+                        CONTAINS ALL ELEMENTS, ROBUST AND UNSTABLE. \n
+                        """
                 self.lift_state = msg
-        
+
         if not self.lift.locked:
                 self.locked = False
-                print("The lift takes you to the next room.")
+                print("The lift descends to the basement, taking you to the next floor.")
 
     # Define the escape in this method. This will be triggered once all the puzzles are completed
     def escape(self):
-            say("Go east from the lift")
+            say("Here is Chemistry. The floor is well lit and modern, but the labs are access controlled. You see a sign pointing east to the Microscope Hall. Go east down the corridor")
         #self.escape_room("direction", "description of what happens next")
        # e.g  self.escape_room("east","The door slides open reavealing the next room")
