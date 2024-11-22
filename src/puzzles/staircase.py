@@ -62,12 +62,14 @@ There's a keypad here.
                          "There is surprisingly a high tech lift in the corner. It has a buttons for the floors and a basement",
                          "lift")
 
+        self.pictures = Item("A code lies within us, over all floors, ascend to find out more", "pictures")
+
         # add as many locks as you like
         # e.g.
         # self.treasure_chest= Lock("answer","description of puzzle", "chest")
 
         ##### add all you items and locks to an inventory ###########
-        self.items = Bag({self.keypad, self.lift})
+        self.items = Bag({self.keypad, self.lift, self.pictures})
 
 
 
@@ -93,6 +95,6 @@ There's a keypad here.
 
     # Define the escape in this method. This will be triggered once all the puzzles are completed
     def escape(self):
-            say("Here is Chemistry. The floor is well lit and modern, but the labs are access controlled. You see a sign pointing east to the Microscope Hall. Go east down the corridor")
+            say("Here is Chemistry. The floor is well lit and modern, but the doors to the labs are access controlled. There are another set of doors to the east , where do they lead?")
         #self.escape_room("direction", "description of what happens next")
        # e.g  self.escape_room("east","The door slides open reavealing the next room")
