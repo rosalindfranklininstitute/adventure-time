@@ -135,7 +135,7 @@ class StoreRoom(EscapeRoom):
 
     # Define the escape in this method. This will be triggered once all the puzzles are completed
     def escape(self):
-        print("The door opens, the spider squawks with joy and returns to settle in the centre of its web")
+        print("The door opens, the spider hisses contently and returns to settle in the centre of its web")
 
 
 
