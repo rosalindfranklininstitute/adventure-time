@@ -145,13 +145,24 @@ def descend():
 
 @when('look')
 def look():
-    if current_puzzle.items:
-        for i in current_puzzle.items:
+    def say_items(items):
+        for i in items:
             item_name = i.aliases[-1]
             if item_name[-1] == 's':
                 say(f'Some {item_name} are here')
             else:
                 say(f'A {item_name} is here')
+
+    if hasattr(current_puzzle, "items_locked"):
+        obj = current_puzzle.items.find(current_puzzle.items_locked["lock"])
+        if obj.locked:
+            items = current_puzzle.items.difference(current_puzzle.items_locked["bag"])
+            say_items(items)
+        else:
+            say_items(current_puzzle.items)
+    else:
+        say_items(current_puzzle.items)
+
 
 @when('go north', direction='north')
 @when('go south', direction='south')

@@ -109,6 +109,10 @@ class StoreRoom(EscapeRoom):
                 self.cupboard,
         })
 
+        self.items_locked = {"bag": Bag({ self.page3,self.page6,self.page12,self.tome,}),
+                             "lock":"padlock"}
+
+
     # Unlock the room by setting this test lock method. Once all the locks are open
     # the puzzle can be unlocked. You can implement this method how you like. Delete pass
     # and put your code in the place. An example is in the comments.
