@@ -13,7 +13,7 @@ class StoreRoom(EscapeRoom):
                 You walk into a dimly lit storeroom. The dust that fills your lungs tells that this room hasn't been opened in many years.
                 You pull a crusty string beside you and a flickering light reveals a small, crowded room filled with cupboards and boxes.
                 The items inside the boxes range from old monitors to unlabelled jars with gooey substances, some glowing and other not.
-                 Suddenly a loud squawk draws your attention to a dark corner of the room where two beady eyes glare back at you whilst it pats its feet rhythmically.
+                Out of the corner of your eye, you spot a large spider, watching you. The spider hisses at you when you go closer
 
 
                 ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠿⠿⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
@@ -48,7 +48,7 @@ class StoreRoom(EscapeRoom):
 
         ##### add some items to give clues of the puzzles ###########
         self.spider = Item(
-                "A spider looms, its jet black body absorbing the light, casting an unsettling shadow. Its eyes glint with an unnatural intelligence, dark and watchul, as if peering straight into your soul. The pincers long and razor-sharp, and when they opens, a harsh, guttaral caw echoes, carrying an ominous weight, as though it brings a message from the other side. You listen carefully to the spiders's pat.\n < pat pat ...... pat pat pat pat pat ...... pat pat pat pat pat pat... > \n It's eyes now glare INTENSELY between two objects, the door to the exit and a cupboard in the corner of the room.",
+                "A spider looms, its jet black body absorbing the light, casting an unsettling shadow. Its eyes glint with an unnatural intelligence, dark and watchful, as if peering straight into your soul. It has pincers long and razor-sharp, and it hovers over an impressive network of spider webs circling the entire room. You listen carefully to the spiders's hiss.\n < hiss hiss ...... hiss hiss hiss hiss hiss ...... hiss hiss hiss hiss hiss hiss... > \n It's eyes now glare INTENSELY between two objects, the door to the exit and a cupboard in the corner of the room. The spider scutters away out of sight.",
                 "spider"
                 )
         self.tome = Item(
@@ -64,7 +64,7 @@ class StoreRoom(EscapeRoom):
                 "page 6",
         )
         self.page12 = Item(
-                "On this page the spider squawks incessantly, indicating importance. At the top of the page, there's a date: 24th January 1939",
+                "As you turn to this page, you notice the spider reappear and hiss at you again. At the top of the page, there's a date: 24th January 1939",
                 "page 12",
         )
         self.exitdoor = Item(
@@ -72,7 +72,7 @@ class StoreRoom(EscapeRoom):
                 "exit"
         )
         self.cupboard = Item(
-                "A spooky cupboard stands in the corner, its dak wood weathered and creaking, with dusty shadowed shelves cloaked in cobwebs. It's locked with a padlock",
+                "A spooky cupboard stands in the corner, its dark wood weathered and creaking, with dusty shadowed shelves cloaked in cobwebs. It's locked with a padlock",
                 "cupboard",
                 )
 
