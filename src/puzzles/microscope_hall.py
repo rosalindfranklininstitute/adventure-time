@@ -25,7 +25,7 @@ class MicroscopeHall(EscapeRoom):
                 "You see an old piece of parchment. It is very fragile and a fragment falls off it. On it, written in an elegant script, is the following message: In science, the true key lies in UTILITY - uncovering knowledge that serves a purpose. Use the code of *Caesar* to find the path forward by stepping back three steps in your quest. Here is the encrypted message: RQFIFQV. ",
                             "parchment")
 
-        self.guinea_pig = Lock("2018", "As you examine the guinea pig, you squeeze it and it speaks to you: In a year, not long ago, a vision took its flight. To push the bounds of science with technology in sight. Named for a pioneer, whose work we now commend, this institute was founded, a future to transcend. What year did this journey begin?", "guinea_pig")
+        self.guinea_pig = Lock("2018", "As you examine the guinea pig, you squeeze it and it speaks to you: In a year, not long ago, a vision took its flight. To push the bounds of science with technology in sight. Named for a pioneer, whose work we now commend, this institute was founded, a future to transcend. What year did this journey begin?", "guinea pig")
 
         self.chest = Lock("stage", "The chest is an ancient wooden box with a large alphabetic lock. There's a note pinned to the chest saying: Enter the microscope component that the elements spell.", "chest")
 
